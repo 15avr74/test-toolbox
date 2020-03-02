@@ -1,0 +1,70 @@
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+	<container qualifier="chameleon-eap-7.1.6-remote" default="false">
+		<configuration>
+			<property name="chameleonTarget">jboss eap:7.1.6:remote</property>
+			<property name="managementAddress">localhost</property>
+			<property name="managementPort">9990</property>
+			<property name="username">admin</property>
+			<property name="password">admin</property>
+			<!--  <property name="allowConnectingToRunningServer">true</property> -->
+		</configuration>
+
+	</container>
+
+
+
+	<container qualifier="chameleon-wildfly15.0.1-managed" default="true">
+		<configuration>
+			<property name="chameleonTarget">wildfly:15.0.1.Final:managed</property>
+			<property name="serverConfig">../../../../../../src/test/resources/standalone-alex.xml</property>
+			
+			<!-- 
+			<property name="username">admin</property>
+			<property name="password">admin</property>
+			<property name="allowConnectingToRunningServer">true</property>
+			<property name="javaVmArguments">-Xms128m -Xmx768m -XX:MaxPermSize=256m</property>
+			<property name="managementAddress">localhost</property>
+			
+			
+		 <property name="serverConfig">standalone-alex.xml</property> <property 
+				name="javaVmArguments">-Djboss.server.config.dir=${project.basedir}/src/test/resources/</property> 
+				<property name="javaVmArguments">-Djboss.server.config.dir="./resources"</property> 
+				<property name="javaVmArguments">-Djboss.server.config.dir="C:\Dev\workspace-eclipse\refa\refa\refa-web\target\server\wildfly-dist_15.0.1.Final\wildfly-15.0.1.Final\standalone"</property> -->
+			<!-- <property name="modulePath">C:\Dev-Tools\modules\</property> -->
+		</configuration>
+
+	</container>
+
+
+
+
+	<container qualifier="chameleon-eap-7.1-managed"
+		default="false">
+		<configuration>
+			<property name="chameleonTarget">jboss eap:7.1.3.Final:managed</property>
+			<!-- <property name="allowConnectingToRunningServer">true</property> -->
+		</configuration>
+
+	</container>
+
+
+
+	<container qualifier="chameleon-widlfly-8.0.0-managed"
+		default="false">
+		<configuration>
+			<property name="chameleonTarget">wildfly:8.0.0.Final:managed</property>
+			<property name="serverConfig">standalone-accessibility.xml</property>
+			<!-- <property name="allowConnectingToRunningServer">true</property> -->
+		</configuration>
+	</container>
+
+	<extension qualifier="webdriver">
+		<property name="browserCapabilities">chrome</property>
+		<property name="chromeDriverBinary">C:\Dev-Tools\selenium\chrome\chromedriver.exe</property>
+	</extension>
+
+
+</arquillian>
