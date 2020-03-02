@@ -21,12 +21,8 @@ pipeline {
         }
         
         stage('Build') {
-            steps {
-            	
-            	//Use withMaven for maven settings file 
-                withMaven(maven:'maven-3.6',jdk:'jdk-8',publisherStrategy: 'EXPLICIT' ){
-					sh "mvn -DskipTests clean deploy"
-                }
+            steps {            	
+            	sh "mvn -DskipTests clean deploy"                
             }
         }
         
@@ -34,14 +30,12 @@ pipeline {
         	parallel {
 				stage('Junit'){
             		steps {
-            	       withMaven(maven:'maven-3.6',jdk:'jdk-8' ){
-                		    sh "mvn test"
-                		}
-            		}
+		                echo 'Dummy Junit'
+		            }
             	}
             	stage('Dbunit'){
             		steps {
-		                echo 'Dummy'
+		                echo 'Dummy Dbunit'
 		            }
 
             	}
