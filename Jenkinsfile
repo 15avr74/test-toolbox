@@ -21,8 +21,10 @@ pipeline {
         }
         
         stage('Build') {
-            steps {            	
-            	sh "mvn -version"                
+            steps {    
+		    withMaven(maven:'maven-3.6.3'){
+			sh "mvn -version"
+		}		                
             }
         }
         
