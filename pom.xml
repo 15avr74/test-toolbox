@@ -1,0 +1,228 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- change if project has specific parent -->
+	<parent>
+		<groupId>be.etnic.maven</groupId>
+		<artifactId>etnic-parent-pom</artifactId>
+		<version>1.6.2</version>
+	</parent>
+
+	<groupId>be.etnic.maven</groupId>
+	<artifactId>test-utils</artifactId>
+	<version>0.0.2</version>
+	<packaging>jar</packaging>
+
+	<name>test tools-lib</name>
+
+	<description>
+		Librairie d'utilitaires pour la réalisation des tests
+	</description>
+
+	<!-- uncomment and set the description <description></description> -->
+	<!-- Comment if is a multimodule -->
+	<url>https://ci.intranet.etnic.be/job/test-utils/Maven_20site</url>
+
+	<!-- change the path to corresponding repository. Comment if is a multimodule 
+		cause scm info are in the parent pom -->
+	<scm>
+		<connection>scm:svn:http://sources.etnic.be/svn/test tools/trunk/</connection>
+		<developerConnection>scm:svn:http://sources.etnic.be/svn/test tools/trunk/</developerConnection>
+	</scm>
+
+	<developers>
+		<!-- Change the example and duplicate it for each developers -->
+		<developer>
+			<id>vieila01</id>
+			<name>Alex. Vieira Ramos</name>
+			<email>alexandre.vieiraramos@etnic.be</email>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<organization>ETNIC</organization>
+			<organizationUrl>http://www.etnic.be</organizationUrl>
+		</developer>
+	</developers>
+
+	<!-- Comment if is a multimodule -->
+	<distributionManagement>
+		<site>
+			<id>maven-site</id>
+			<url>file:target/site</url>
+		</site>
+	</distributionManagement>
+
+
+
+	<properties>
+		<selenium-server.version>3.9.1</selenium-server.version>
+		<browsermob.version>2.1.5</browsermob.version>
+		<cucumber.version>4.2.0</cucumber.version>
+		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<arquillian.chameleon.version>1.0.0.CR6</arquillian.chameleon.version>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+
+		<!-- compatibility junit 4 -->
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+
+
+
+
+
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit-jupiter.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- Configuration pour les tests selenium -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${selenium-server.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<!-- Tools for using aXe for web accessibility testing with JUnit and Selenium. -->
+		<dependency>
+			<groupId>com.deque</groupId>
+			<artifactId>axe-selenium</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+
+		<!-- BrowserMob Proxy allows you to manipulate HTTP requests and responses -->
+		<dependency>
+			<groupId>net.lightbody.bmp</groupId>
+			<artifactId>browsermob-core</artifactId>
+			<version>${browsermob.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+
+		<!-- Chameleon arquillian -->
+
+		<dependency>
+			<groupId>org.arquillian.container</groupId>
+			<artifactId>arquillian-chameleon-junit-container-starter</artifactId>
+			<version>${arquillian.chameleon.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Cucumber configuration -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Assertions -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<!-- use 2.9.1 for Java 7 projects -->
+			<version>3.11.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
+		<!-- Flyway -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>6.2.1</version>
+		</dependency>
+
+	</dependencies>
+
+
+</project>
