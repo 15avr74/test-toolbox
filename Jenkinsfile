@@ -22,7 +22,7 @@ pipeline {
         
         stage('Build') {
             steps {            	
-            	sh "mvn -e -DskipTests clean deploy"                
+            	sh "mvn -version"                
             }
         }
         
