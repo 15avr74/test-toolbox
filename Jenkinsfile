@@ -22,6 +22,7 @@ pipeline {
         
         stage('Build') {
             steps {    
+		    	sh "echo $M2_HOME"
 		  	sh "who"
 			sh "mvn -version"
 				                
