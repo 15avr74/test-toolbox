@@ -24,7 +24,8 @@ pipeline {
             steps {    	
 		    	sh "echo $M2_HOME"
 		  	sh "who"
-			sh "mvn -version"				                
+			sh "mvn -version"
+		    	sh "mvn clean package"
             }
         }
         
