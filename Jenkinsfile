@@ -21,11 +21,9 @@ pipeline {
         }
         
         stage('Build') {
-            steps {    
-		    	sh "echo $M2_HOME"
+            steps {    		    	
 		  	sh "who"
-			sh "mvn -version"
-				                
+			sh "mvn -version"				                
             }
         }
         
