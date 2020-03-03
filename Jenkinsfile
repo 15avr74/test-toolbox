@@ -22,7 +22,7 @@ pipeline {
         
         stage('Build') {
             steps {    
-		  
+		  	sh "who"
 			sh "mvn -version"
 				                
             }
