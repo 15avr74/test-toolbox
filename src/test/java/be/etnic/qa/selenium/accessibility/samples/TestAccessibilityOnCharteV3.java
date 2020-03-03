@@ -41,6 +41,7 @@ public class TestAccessibilityOnCharteV3 {
     }
 
     @Test
+    @Disabled
     public void analyseAccessibility() {
 
         Stream.of(new File(BASE_URL)
