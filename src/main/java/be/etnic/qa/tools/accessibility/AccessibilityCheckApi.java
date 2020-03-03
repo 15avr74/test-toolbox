@@ -42,12 +42,13 @@ public class AccessibilityCheckApi {
     
     public AccessibilityCheckApi(Map<String, String> headers, AxeImpactEnum level) {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Dev-Tools\\selenium\\webdrivers\\bin\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Dev-Tools\\selenium\\webdrivers\\bin\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/drivers/chromedriver");
 
         setHeader(headers);
 
         cOptions = new ChromeOptions();
-        // cOptions.addArguments("headless");
+        cOptions.addArguments("headless");
         cOptions.addArguments("--window-size=1920,1080");
         cOptions.setProxy(ClientUtil.createSeleniumProxy(proxy));
 
